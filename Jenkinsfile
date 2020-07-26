@@ -13,6 +13,7 @@ pipeline {
         dir('azure-vote') {
           sh(script: 'docker build -t voting-pipeline .')
         }
+        sh(script: 'docker images -a')
       }
     }
   }
