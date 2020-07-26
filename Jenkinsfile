@@ -11,7 +11,7 @@ pipeline {
       steps {
         sh(script: 'docker images -a')
         sh(script: 'cd azure-vote')
-        sh(script: '$PWD')
+        echo "$PWD"
       }
     }
   }
