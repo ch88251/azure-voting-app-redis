@@ -10,8 +10,9 @@ pipeline {
     stage('Docker Build') {
       steps {
         sh(script: 'docker images -a')
-        sh(script: 'cd azure-vote')
-        echo "$PWD"
+        dir('azure-vote') {
+          echo "$PWD"
+        }
       }
     }
   }
