@@ -13,6 +13,7 @@ pipeline {
         dir('azure-vote') {
           sh(script: 'docker build -t voting-pipeline .')
         }
+        sh(script: 'docker rmi $(docker images --filter "dangling=true" -q --no-trunc)')
         sh(script: 'docker images -a')
       }
     }
